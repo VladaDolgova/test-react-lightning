@@ -14,7 +14,6 @@
     "@babel/plugin-proposal-throw-expressions": "7.12.13",
     "@babel/preset-env": "7.14.4",
     "@babel/preset-react": "7.13.13",
-    "@salesforce/babel-preset-design-system-react": "^3.0.0",
     "babel-loader": "8.2.2",
     "compression-webpack-plugin": "8.0.0",
     "copy-webpack-plugin": "9.0.0",
