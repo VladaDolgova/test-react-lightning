@@ -2,6 +2,7 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const publicPath = '/';
 module.exports = () => {
     return merge([
         {
@@ -46,20 +47,12 @@ module.exports = () => {
                         },
                     },
                     {
-                        test: /\.scss$/i,
+                        test: /\.(css|scss|min\.css)$/,
                         use: ["style-loader", "css-loader"],
-                    },
-                    {
-                        test: /\.(css|scss)$/,
-                        use: ["style-loader", "css-loader"],
-                    },
-                    {
-                        test: /\.min\.css$/i,
-                        use: ['style-loader', 'css-loader'],
                     },
                     {
                         test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
-                        type: 'asset/inline',
+                        type: 'asset/resource',
                     }
                 ],
             },
@@ -73,9 +66,13 @@ module.exports = () => {
             devServer: { static: [path.join(__dirname, "src"), path.join(__dirname, "public")], historyApiFallback: true },
             entry: './src/index.js',
             output: {
-                //  filename: 'bundle.js',
+                library: 'myLib',
+                libraryTarget: 'umd',
+                filename: '[name].js',
+                globalObject: 'self',
                 path: path.resolve(__dirname, 'dist'),
-            },
+                publicPath: publicPath,
+              },
         },
     ]);
 };

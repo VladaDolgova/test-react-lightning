@@ -6,7 +6,7 @@ import { Button } from '@salesforce/design-system-react';
 function App() {
   return (<>
     <Button label="Hello Button" />
-    <div className='App-header'>kjbkbkbkjbj</div>
+    {/* <div className='App-header'>kjbkbkbkjbj</div> */}
   </>
   );
 }

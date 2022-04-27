@@ -1,10 +1,7 @@
 import React from 'react';
-import { IconSettings, BuilderHeader, BuilderHeaderNav, BuilderHeaderNavDropdown, BuilderHeaderNavLink } from "@salesforce/design-system-react"
-
-
+import { BuilderHeader, BuilderHeaderNav, BuilderHeaderNavDropdown, BuilderHeaderNavLink } from "@salesforce/design-system-react";
 
 const Example = (props) => (
-	<IconSettings iconPath="/assets/icons">
 		<BuilderHeader
 			assistiveText={{
 				icon: 'Builder',
@@ -45,7 +42,6 @@ const Example = (props) => (
 				/>
 			</BuilderHeaderNav>
 		</BuilderHeader>
-	</IconSettings>
 );
 Example.displayName = 'BuilderHeaderBase';
 export default Example;
